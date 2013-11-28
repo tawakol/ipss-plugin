@@ -162,16 +162,20 @@ public class DistPathLfAlgorithm extends NetPathWalkAlgorithmImpl {
 	private void checkNetVisitedStatus() throws InterpssException {
 		// all buses and branches should be visited
 		boolean err = false;
-		for (Bus b : this.net.getBusList()) 
+		for (Object obj : this.net.getBusList()) {
+			Bus b = (Bus)obj;
 		 	if (!b.isVisited()) {                                                                                                                                                                                                                                                                                                                                                                                                                            
 		 		ipssLogger.warning("Dist bus not visited: " + b.getId());
 		 		err = true;
 		 	}
-		for (Branch b : this.net.getBranchList())
+		}
+		for (Object obj : this.net.getBranchList()) {
+			Branch b = (Branch)obj;
 		 	if (!b.isVisited()) {
 		 		ipssLogger.warning("Dist branch not visited: " + b.getId());
 		 		err = true;
 		 	}
+		}
 
 		if (err) {
 	 		ipssLogger.warning("Error in setting Dist net branch flow direction");

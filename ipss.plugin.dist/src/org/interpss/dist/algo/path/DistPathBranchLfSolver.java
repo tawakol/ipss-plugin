@@ -47,10 +47,10 @@ public class DistPathBranchLfSolver extends DistPathBranchWalker {
 		DistBus optBus = (DistBus)(branch.getOppositeBus(bus));
 		
 		Complex cur = DistPathLfHelper.current(branch);
-		Complex z = branch.getBranch().getZ();
+		Complex z = branch.getAcscBranch().getZ();
 		Complex dV = cur.multiply(z);
 		
-		Complex optVoltage = optBus.getBus().getVoltage();
+		Complex optVoltage = optBus.getAcscBus().getVoltage();
 		Complex newVoltage;
 		if (DistPathLfHelper.atFlowIntoSide(branch, bus))
 			newVoltage = optVoltage.add(dV);
@@ -58,13 +58,13 @@ public class DistPathBranchLfSolver extends DistPathBranchWalker {
 			newVoltage = optVoltage.subtract(dV);
 		
 		DistBus distBus = (DistBus)bus;
-		distBus.getBus().setVoltage(newVoltage);
+		distBus.getAcscBus().setVoltage(newVoltage);
 		
 		bus.setVisited(true);
 		if (this.statusInfo != null)
 			statusInfo.add("\nTo Bus visited " + bus.getId() + " voltage :" + 
-						Number2String.toStr(distBus.getBus().getVoltageMag(UnitType.PU)) + " (" +
-						Number2String.toStr(distBus.getBus().getVoltageAng(UnitType.Deg)) + ") " +
+						Number2String.toStr(distBus.getAcscBus().getVoltageMag(UnitType.PU)) + " (" +
+						Number2String.toStr(distBus.getAcscBus().getVoltageAng(UnitType.Deg)) + ") " +
 						" branch cur: " + Number2String.toStr(cur));
 	}
 }
