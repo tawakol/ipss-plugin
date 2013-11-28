@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="/ipss.lib/lib/ieee/ieee.odm_pss.jar"/>
 	<classpathentry kind="lib" path="/ipss.lib/lib/ieee/ieee.odm.schema.jar"/>
 	<classpathentry kind="lib" path="/ipss.lib/lib/ipss/ipss_plugin.jar"/>
+	<classpathentry kind="lib" path="/ipss.lib.3rdPty/lib/sparse/csparsej-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
