@@ -28,7 +28,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.interpss.common.exp.InterpssException;
 import com.interpss.dstab.DStabBus;
 import com.interpss.dstab.DStabilityNetwork;
 import com.interpss.dstab.algo.DynamicSimuMethod;
@@ -38,7 +37,7 @@ import com.interpss.dstab.util.sample.SampleDStabCase;
 public class SalientPoleMachineTest extends TestSetupBase {
 	
 	@Test
-	public void test_Case1()  throws InterpssException {
+	public void test_Case1() {
 		// create a machine in a two-bus network. The loadflow already converged
 		DStabilityNetwork net = SampleDStabCase.createDStabTestNet();
 		SalientPoleMachine mach = SampleDStabCase.createSalientPoleMachine(net);

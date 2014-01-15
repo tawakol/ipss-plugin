@@ -35,7 +35,6 @@ import org.interpss.core.dstab.cml.controller.util.TestAnnotateStabilizerComplex
 import org.interpss.dstab.control.cml.block.DelayControlBlock;
 import org.junit.Test;
 
-import com.interpss.common.exp.InterpssException;
 import com.interpss.dstab.DStabBus;
 import com.interpss.dstab.DStabilityNetwork;
 import com.interpss.dstab.controller.annotate.util.AnControllerHelper;
@@ -109,7 +108,7 @@ public class AnnotateParserTests extends DStabTestSetupBase {
 	}
 
 	@Test
-	public void governorTestCase()  throws InterpssException {
+	public void governorTestCase() {
 		DStabilityNetwork net = DStabTestUtilFunc.createTestNetwork();
 		DStabBus bus = net.getDStabBus("BusId");
 		Machine machine = bus.getMachine();
@@ -147,7 +146,7 @@ public class AnnotateParserTests extends DStabTestSetupBase {
 	}
 
 	@Test
-	public void stabilizerTestCase()  throws InterpssException {
+	public void stabilizerTestCase() {
 		DStabilityNetwork net = DStabTestUtilFunc.createTestNetwork();
 		DStabBus bus = net.getDStabBus("BusId");
 		Machine machine = bus.getMachine();
@@ -185,7 +184,7 @@ public class AnnotateParserTests extends DStabTestSetupBase {
 	}
 
 	@Test
-	public void stabilizerComplexTestCase()  throws InterpssException {
+	public void stabilizerComplexTestCase() {
 		DStabilityNetwork net = DStabTestUtilFunc.createTestNetwork();
 		DStabBus bus = net.getDStabBus("BusId");
 		Machine machine = bus.getMachine();
